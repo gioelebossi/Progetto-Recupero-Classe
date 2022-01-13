@@ -21,7 +21,7 @@ Struct Pilota {
  - Gruppo 3 - Colosio (Caricamento Dati)  
 ```void inserimentoDati(Pilota[] piloti, string[] nomiGare, int[,] ordineArrivo)```  
 I nomi delle gare sono fissi.  
-Il caricamento della scuderia è a scelta multipla  
+Il caricamento della scuderia è a scelta multipla.  
   
  - Gruppo 4 - Pretashi (Punto 1, 2)  
 ```void stampa(Pilota[] piloti)```  
