@@ -8,10 +8,10 @@ Tutte le funzioni e le variabili devono essere nominate usando camelCase. Nel ca
 Queste sono i nomi di funzioni riservati ai vari gruppi.
 
  - Gruppo 2 - Di Bella  
-Struct Pilota {
-   string nome
-   string scuderia
-   int punti
+Struct Pilota {  
+   string nome;  
+   string scuderia;  
+   int punti;  
 }
 
 ```string[] circuiti```  
