@@ -8,18 +8,18 @@ Tutte le funzioni e le variabili devono essere nominate usando camelCase. Nel ca
 Queste sono i nomi di funzioni riservati ai vari gruppi.
 
  - Gruppo 2 - Di Bella  
-``` Struttura Pilota {  
-   string nome  
-   string scuderia  
-   int punti  
-}```  
+Struct Pilota {
+   string nome
+   string scuderia
+   int punti
+}
 
-```Array string[] circuiti```  
+```string[] circuiti```  
  - Gruppo 3 - Colosio  
 ```void inserimentoDati(Pilota[] piloti, string[] nomiGare, int[,] ordineArrivo)```  
- - Gruppo 4  
+ - Gruppo 4 - Pretashi  
 ```void stampa(Pilota[] piloti)```  
 ```void vittoriePilota(Pilota[] piloti, int[,] ordineArrivo)```  
- - Gruppo 5  
+ - Gruppo 5 - Bossi  
 ```void visualizzaClassifica(Pilota[] piloti, string[] nomiGare, int[,] ordineArrivo)```  
 ```void calcolaPunti(Pilota[] piloti, string[] nomiGare, int[,] ordineArrivo)```  
