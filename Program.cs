@@ -6,6 +6,7 @@ namespace EsercizioRipasso
     {
         static void Main(string[] args)
         {
+            // Codice del main
         }
     }
 }
