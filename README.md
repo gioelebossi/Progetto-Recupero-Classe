@@ -16,7 +16,7 @@ Queste sono i nomi di funzioni riservati ai vari gruppi.
    
    Array string[] circuiti  
  - Gruppo 3  
-
+   void inserimentoDati(Pilota[] piloti, string[] nomiGare, int[,] ordineArrivo)  
  - Gruppo 4  
    void stampa(Pilota[] piloti)  
    void vittoriePilota(Pilota[] piloti, int[,] ordineArrivo)  
