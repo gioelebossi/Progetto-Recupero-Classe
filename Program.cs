@@ -6,7 +6,6 @@ namespace EsercizioRipasso
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!!");
         }
     }
 }
