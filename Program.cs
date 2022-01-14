@@ -17,8 +17,8 @@ namespace EsercizioRipasso
         static void Main(string[] args)
         {
             
-            int[] circuiti=new int[NC];
-            string[,] arrivi= new string[NR, NC];
+            string[] circuiti=new string[NC];
+            int[,] arrivi= new int[NR, NC];
 
             carica();
 
