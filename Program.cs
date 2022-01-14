@@ -22,32 +22,39 @@ namespace EsercizioRipasso
 
         void vittoriePilota(Pilota[] piloti, int[,] ordineArrivo) //gruppo 4
         {
-            bool z = false;
             string n;
-            int X = ordineArrivo[1], a = 0;
+            int X = lenght.ordineArrivo[1], a = 0;
 
+            {
             Console.WriteLine("Inserire un pilota: ");
             n = Console.ReadLine();
 
-            do
-            {
+           for (int i = 0; i < X; i++)
+            }
                 if (n == Pilota[a].piloti)
                 {
-                    z = true;
-                    a--;
+                    break;
                 }
                 a++;
-            } while (z == false);
-
-            Console.WriteLine("Il pilota ha vinto le gare: ");
-            for (int i = 0; i < X; i++)
+            } 
+            
+            if (a == X)
             {
-                if (ordineArrivo[a, X] == 1)
-                {
-                    Console.WriteLine(ordineArrivo[a, X]);
-                }
-
+                Console.WriteLine("Non esiste il pilota.");   
             }
+            else
+            {
+                Console.WriteLine("Il pilota ha vinto le gare numero: ");
+                for (int i = 0; i < X; i++)
+                {
+                    if (ordineArrivo[a, X] == 1)
+                    {
+                    Console.WriteLine(ordineArrivo[a]+" ");
+                    }
+                }
+            }
+
+            
         }
 
         static void Main(string[] args)
