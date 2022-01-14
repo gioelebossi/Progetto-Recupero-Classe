@@ -20,16 +20,16 @@ namespace EsercizioRipasso
 
         }
 
-        void vittoriePilota(Pilota[] piloti, int[,] ordineArrivo) //gruppo 4
+        void vittoriePilota(Pilota[] piloti, int[,] ordineArrivo, string[] nomiGare) //gruppo 4
         {
             string n;
-            int X = lenght.ordineArrivo[1], a = 0;
+            int a = 0;
 
             {
             Console.WriteLine("Inserire un pilota: ");
             n = Console.ReadLine();
 
-           for (int i = 0; i < X; i++)
+           for (int i = 0; i < NR; i++)
             }
                 if (n == Pilota[a].piloti)
                 {
@@ -38,18 +38,18 @@ namespace EsercizioRipasso
                 a++;
             } 
             
-            if (a == X)
+            if (a == NR)
             {
                 Console.WriteLine("Non esiste il pilota.");   
             }
             else
             {
-                Console.WriteLine("Il pilota ha vinto le gare numero: ");
-                for (int i = 0; i < X; i++)
+                Console.WriteLine("Il pilota ha vinto le gare: ");
+                for (int i = 0; i < NR; i++)
                 {
-                    if (ordineArrivo[a, X] == 1)
+                    if (ordineArrivo[a, NR] == 1)
                     {
-                    Console.WriteLine(ordineArrivo[a]+" ");
+                    Console.Write(nomiGare[i]+" ");
                     }
                 }
             }
