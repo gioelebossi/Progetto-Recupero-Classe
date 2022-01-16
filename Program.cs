@@ -1,119 +1,100 @@
 using System;
 
-namespace EsercizioRipasso
-{
-    class Program
-    {
-        struct piloti
-        {
-            public string nome;
-            public string scuderia;
-            public int punti;
-        };
+namespace EsercizioRipasso {
+	class Program {
+		struct piloti {
+			public string nome;
+			public string scuderia;
+			public int punti;
+		};
 
-        const int NR = 20;
-        const int NC = 10;
+		const int NR = 20;
+		const int NC = 10;
 
-        static void stampa(piloti[] piloti) 
-        {
-            string scud;
-            Console.WriteLine("Inserire la scuderia di cui si vogliono visualizzare i piloti");
-            scud = Console.ReadLine();
+		static void stampa(piloti[] piloti) {
+			string scud;
+			Console.WriteLine("Inserire la scuderia di cui si vogliono visualizzare i piloti");
+			scud = Console.ReadLine();
 
-            Console.WriteLine("I piloti della scuderia " + scud + " sono");
+			Console.WriteLine("I piloti della scuderia " + scud + " sono");
 
-            for (int i = 0; i < piloti.Length; i++)
-            {
-                if (scud == piloti[i].scuderia)
-                {
-                    Console.WriteLine(piloti[i].nome);
-                }
-            }
+			for (int i = 0; i < piloti.Length; i++) {
+				if (scud == piloti[i].scuderia) {
+					Console.WriteLine(piloti[i].nome);
+				}
+			}
 
-        }
+		}
 
-        static void vittoriePilota(piloti[] piloti, int[,] arrivi, string[] circuiti) 
-        {
-            string n;
-            int a = 0;
+		static void vittoriePilota(piloti[] piloti, int[, ] arrivi, string[] circuiti) {
+			string n;
+			int a = 0;
 
-            Console.WriteLine("Inserire un pilota: ");
-            n = Console.ReadLine();
+			Console.WriteLine("Inserire un pilota: ");
+			n = Console.ReadLine();
 
-            for (int i = 0; i < NR; i++)
-            {
-                if (n == piloti[a].nome)
-                {
-                    break;
-                }
-                a++;
-            }
+			for (int i = 0; i < NR; i++) {
+				if (n == piloti[a].nome) {
+					break;
+				}
+				a++;
+			}
 
-            if (a == NR)
-            {
-                Console.WriteLine("Non esiste il pilota.");
-            }
-            else
-            {
-                Console.WriteLine("Il pilota ha vinto le gare: ");
-                for (int i = 0; i < NR; i++)
-                {
-                    if (arrivi[a, NR] == 1)
-                    {
-                        Console.Write(circuiti[i] + " ");
-                    }
-                }
-            }
-        }
+			if (a == NR) {
+				Console.WriteLine("Non esiste il pilota.");
+			}
+			else {
+				Console.WriteLine("Il pilota ha vinto le gare: ");
+				for (int i = 0; i < NR; i++) {
+					if (arrivi[a, NR] == 1) {
+						Console.Write(circuiti[i] + " ");
+					}
+				}
+			}
+		}
 
-        static void Main(string[] args)
-        {
-            
-            string[] circuiti=new string[NC];
-            int[,] arrivi= new int[NR, NC];
-            piloti[] piloti = new piloti[NR];
+		static void Main(string[] args) {
 
-            carica();
+			string[] circuiti = new string[NC];
+			int[,] arrivi = new int[NR, NC];
+			piloti[] piloti = new piloti[NR];
 
-            int scelta;
-            do
-            {
-                Console.WriteLine("Scegli l'operazione da effettuare");
-                Console.WriteLine("1) Stampare l'elenco dei piloti appartenenti alla scuderia di cui viene fornito il nome");
-                Console.WriteLine("2) Determinare il nome dei circuiti nei quali il pilota di cui viene fornito il nome ha vinto la gara ");
-                Console.WriteLine("3) visualizzare la classifica di arrivo della gara per la quale è fornito in input il numero identificativo");
-                Console.WriteLine("4) Calcolare i punti di ciascun pilota");
-                Console.WriteLine("5) Esci dal programma");
-                scelta = int.Parse(Console.ReadLine());
-                Console.WriteLine("\n\n");
-                switch (scelta)
-                {
-                    case 1:
-                        
-                        break;
-                    case 2:
-                        
-                        break;
-                    case 3:
-                        stampa(piloti);
-                        break;
-                    case 4:
-                        vittoriePilota(piloti, arrivi, circuiti);
-                        break;
-                    case 5:
-                        Console.WriteLine("FINE");
-                        break;
-                    default:
-                        Console.WriteLine("Scelta errata");
-                        break;
-                }
-            } while (scelta != 5);
+			carica();
 
-            Console.ReadKey();
-        }
-        
-        
+			int scelta;
+			do {
+				Console.WriteLine("Scegli l'operazione da effettuare");
+				Console.WriteLine("1) Stampare l'elenco dei piloti appartenenti alla scuderia di cui viene fornito il nome");
+				Console.WriteLine("2) Determinare il nome dei circuiti nei quali il pilota di cui viene fornito il nome ha vinto la gara ");
+				Console.WriteLine("3) visualizzare la classifica di arrivo della gara per la quale è fornito in input il numero identificativo");
+				Console.WriteLine("4) Calcolare i punti di ciascun pilota");
+				Console.WriteLine("5) Esci dal programma");
+				scelta = int.Parse(Console.ReadLine());
+				Console.WriteLine("\n\n");
+				switch (scelta) {
+				case 1:
 
-         
-    }
+					break;
+				case 2:
+
+					break;
+				case 3:
+					stampa(piloti);
+					break;
+				case 4:
+					vittoriePilota(piloti, arrivi, circuiti);
+					break;
+				case 5:
+					Console.WriteLine("FINE");
+					break;
+				default:
+					Console.WriteLine("Scelta errata");
+					break;
+				}
+			} while ( scelta != 5 );
+
+			Console.ReadKey();
+		}
+
+	}
 }
