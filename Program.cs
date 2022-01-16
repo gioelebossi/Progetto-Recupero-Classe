@@ -14,12 +14,64 @@ namespace EsercizioRipasso
         const int NR = 20;
         const int NC = 10;
 
+        static void stampa(piloti[] piloti) 
+        {
+            string scud;
+            Console.WriteLine("Inserire la scuderia di cui si vogliono visualizzare i piloti");
+            scud = Console.ReadLine();
+
+            Console.WriteLine("I piloti della scuderia " + scud + " sono");
+
+            for (int i = 0; i < piloti.Length; i++)
+            {
+                if (scud == piloti[i].scuderia)
+                {
+                    Console.WriteLine(piloti[i].nome);
+                }
+            }
+
+        }
+
+        static void vittoriePilota(piloti[] piloti, int[,] arrivi, string[] circuiti) 
+        {
+            string n;
+            int a = 0;
+
+            Console.WriteLine("Inserire un pilota: ");
+            n = Console.ReadLine();
+
+            for (int i = 0; i < NR; i++)
+            {
+                if (n == piloti[a].nome)
+                {
+                    break;
+                }
+                a++;
+            }
+
+            if (a == NR)
+            {
+                Console.WriteLine("Non esiste il pilota.");
+            }
+            else
+            {
+                Console.WriteLine("Il pilota ha vinto le gare: ");
+                for (int i = 0; i < NR; i++)
+                {
+                    if (arrivi[a, NR] == 1)
+                    {
+                        Console.Write(circuiti[i] + " ");
+                    }
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             
             string[] circuiti=new string[NC];
             int[,] arrivi= new int[NR, NC];
-            Piloti[] piloti = new Piloti[NR];
+            piloti[] piloti = new piloti[NR];
 
             carica();
 
@@ -60,56 +112,8 @@ namespace EsercizioRipasso
             Console.ReadKey();
         }
         
-        static void stampa(Pilota[] piloti) //gruppo 4
-        {
-            string scud;
-            Console.WriteLine("Inserire la scuderia di cui si vogliono visualizzare i piloti");
-            scud = Console.ReadLine();
-          
-            Console.WriteLine("I piloti della scuderia " + scud + " sono");
-          
-            for (int i = 0; i < piloti.Length; i++)
-            {
-                if (scud == scuderia[i])
-                {
-                    Console.WriteLine(nome[i]);
-                }
-            }
+        
 
-        }
-
-        void vittoriePilota(Pilota[] piloti, int[,] ordineArrivo, string[] nomiGare) //gruppo 4
-        {
-            string n;
-            int a = 0;
-
-            Console.WriteLine("Inserire un pilota: ");
-            n = Console.ReadLine();
-
-           for (int i = 0; i < NR; i++)
-            }
-                if (n == Pilota[a].piloti)
-                {
-                    break;
-                }
-                a++;
-            } 
-            
-            if (a == NR)
-            {
-                Console.WriteLine("Non esiste il pilota.");   
-            }
-            else
-            {
-                Console.WriteLine("Il pilota ha vinto le gare: ");
-                for (int i = 0; i < NR; i++)
-                {
-                    if (ordineArrivo[a, NR] == 1)
-                    {
-                    Console.Write(nomiGare[i]+" ");
-                    }
-                }
-            }   
-        }     
+         
     }
 }
