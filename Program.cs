@@ -11,7 +11,7 @@ namespace EsercizioRipasso {
 		const int NR = 20;
 		const int NC = 10;
 
-		static void stampa(piloti[] piloti) {
+		static void stampa(Pilota[] piloti) {
 			string scud;
 			Console.WriteLine("Inserire la scuderia di cui si vogliono visualizzare i piloti");
 			scud = Console.ReadLine();
@@ -26,7 +26,7 @@ namespace EsercizioRipasso {
 
 		}
 
-		static void vittoriePilota(piloti[] piloti, int[, ] arrivi, string[] circuiti) {
+		static void vittoriePilota(Pilota[] piloti, int[, ] arrivi, string[] circuiti) {
 			string n;
 			int a = 0;
 
