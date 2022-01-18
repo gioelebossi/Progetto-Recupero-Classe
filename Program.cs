@@ -38,7 +38,7 @@ namespace EsercizioRipasso {
 				"Haas"
 			};
 
-			for (int i = 0; i < NP; i++) {
+			for (int i = 0; i < NR; i++) {
 				Console.WriteLine("inserisci il nome del pilota: ");
 				piloti[i].nome = Console.ReadLine();
 
@@ -59,10 +59,10 @@ namespace EsercizioRipasso {
 				piloti[i].punti = 0;
 			}
 
-			for (int j = 0; j < 10; j++) {
+			for (int j = 0; j < NC; j++) {
 				Console.WriteLine("classifica gara: " + nomigare[j]);
 
-				for (int i = 0; i < 20; i++) {
+				for (int i = 0; i < NR; i++) {
 					Console.WriteLine("pilota: " + piloti[i].nome);
 					OrdineArrivo[i, j] = int.Parse(Console.ReadLine());
 				}
