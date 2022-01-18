@@ -86,24 +86,24 @@ namespace EsercizioRipasso {
 
 		static void vittoriePilota(Pilota[] piloti, int[, ] arrivi, string[] circuiti) {
 			string n;
-			int a = 0;
+			int riga = 0;
 
 			Console.WriteLine("Inserire un pilota: ");
 			n = Console.ReadLine();
 
 			for (int i = 0; i < NR; i++) {
-				if (n == piloti[a].nome) {
+				if (n == piloti[riga].nome) {
 					break;
 				}
-				a++;
+				riga++;
 			}
 
-			if (a == NR) {
+			if (riga == NR) {
 				Console.WriteLine("Non esiste il pilota.");
 			} else {
 				Console.WriteLine("Il pilota ha vinto le gare: ");
 				for (int i = 0; i < NR; i++) {
-					if (arrivi[a, NR] == 1) {
+					if (arrivi[riga, i] == 1) {
 						Console.Write(circuiti[i] + " ");
 					}
 				}
