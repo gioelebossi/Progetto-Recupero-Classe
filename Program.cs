@@ -73,16 +73,14 @@ namespace EsercizioRipasso {
 				Console.WriteLine("\n\n");
 				switch (scelta) {
 				case 1:
-
-					break;
-				case 2:
-
-					break;
-				case 3:
 					stampa(piloti);
 					break;
-				case 4:
+				case 2:
 					vittoriePilota(piloti, arrivi, circuiti);
+					break;
+				case 3:
+					break;
+				case 4:
 					break;
 				case 5:
 					Console.WriteLine("FINE");
