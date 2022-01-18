@@ -2,7 +2,7 @@ using System;
 
 namespace EsercizioRipasso {
 	class Program {
-		struct pilota {
+		struct Pilota {
 			public string nome;
 			public string scuderia;
 			public int punti;
@@ -57,7 +57,7 @@ namespace EsercizioRipasso {
 
 			string[] circuiti = new string[NC];
 			int[,] arrivi = new int[NR, NC];
-			pilota[] piloti = new pilota[NR];
+			Pilota[] piloti = new Pilota[NR];
 
 			carica();
 
