@@ -16,7 +16,7 @@ Struct Pilota {
    int punti;  
 }
   
-```string[] circuiti```  
+```string[] circuiti = ["Monza", "Imola", "Fiorano", "Silverstone", "Spa", "Suzuka", "Monaco", "Baku", "Modena", "Austria"]```  
   
  - Gruppo 3 - Colosio (Caricamento Dati)  
 ```void inserimentoDati(Pilota[] piloti, string[] nomiGare, int[,] ordineArrivo)```  
