@@ -3,25 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using System;
+namespace EsercizioRipasso {
+	class Program {
+		struct Pilota {
+			public string nome;
+			public string scuderia;
+			public int punti;
+		};
 
-namespace EsercizioRipasso
-{
-    class Program
-    {
-        struct Pilota
-        {
-            public string nome;
-            public string scuderia;
-            public int punti;
-        };
+		const int NR = 20;
+		const int NC = 10;
 
-        const int NR = 20;
-        const int NC = 10;
-
-        static void inserimentoDati(Pilota[] piloti, string[] nomiGare, int[,] ordineArrivo)
-        {
-            nomiGare = new String[] {
+		static void inserimentoDati(Pilota[] piloti, string[] nomiGare, int[, ] ordineArrivo) {
+			nomiGare = new String[] {
 				"Monza",
 				"Imola",
 				"Fiorano",
@@ -34,7 +28,7 @@ namespace EsercizioRipasso
 				"Austria"
 			};
 
-            string[] nomiScuderie = new String[] {
+			string[] nomiScuderie = new String[] {
 				"Alfa Romeo",
 				"Alpha tauri",
 				"Mercedes",
@@ -220,6 +214,6 @@ namespace EsercizioRipasso
 
             Console.ReadKey();
         }
-
     }
+	}
 }
