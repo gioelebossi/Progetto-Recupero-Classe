@@ -10,41 +10,64 @@ namespace EsercizioRipasso {
 
 		const int NR = 20;
 		const int NC = 10;
-    
-    static void inserimentoDati(Pilota[] piloti, string[] nomiGare, int[,] ordineArrivo)
-        {
-            nomiGare = new String[] {"Monza", "Imola", "Fiorano", "Silverstone", "Spa", "Suzuka", "Monaco", "Baku", "Modena", "Austria"};
-            string[] nomiScuderie = new String[] {"Alfa Romeo","Alpha tauri","Mercedes","Asron Martin","Ferrari","RedBull","Mclaren","Alpine","Williams","Haas"};
-            for (int i = 0; i < NP; i++)
-            {
-                Console.WriteLine("inserisci il nome del pilota: ");
-                piloti[i].nome = Console.ReadLine();
-                for (int j = 0; j < nomiScuderie.Length; j++)
-                {
-                    Console.WriteLine((j+1)+") "+nomiScuderie[j]);
-                }
-                Console.Write("inserire la scuderia: ");
-            
-                int numeroScuderia =int.Parse(Console.ReadLine());
-                while(numeroScuderia > 0 || numeroScuderia <= nomiScuderie.Length)
-                {
-                    Console.WriteLine("il numero delle scuderie non è valido, riprova!");
-                    numeroScuderia =int.Parse(Console.ReadLine());
-                }
 
-                piloti[i].scuderia = nomiScuderie[numeroScuderia -1];
-                piloti[i].punti = 0;
-            }
-            for (int j = 0; j < 10; j++)
-            {
-                Console.WriteLine("classifica gara: "+nomigare[j])
-                for (int i = 0; i < 20; i++)
-                {
-                    Console.WriteLine("pilota: "+piloti[i].nome);
-                    OrdineArrivo[i,j] =int.Parse(Console.ReadLine());
-                }
-            }
-        }
+		static void inserimentoDati(Pilota[] piloti, string[] nomiGare, int[, ] ordineArrivo) {
+			nomiGare = new String[] {
+				"Monza",
+				"Imola",
+				"Fiorano",
+				"Silverstone",
+				"Spa",
+				"Suzuka",
+				"Monaco",
+				"Baku",
+				"Modena",
+				"Austria"
+			};
+
+			string[] nomiScuderie = new String[] {
+				"Alfa Romeo",
+				"Alpha tauri",
+				"Mercedes",
+				"Asron Martin",
+				"Ferrari",
+				"RedBull",
+				"Mclaren",
+				"Alpine",
+				"Williams",
+				"Haas"
+			};
+
+			for (int i = 0; i < NP; i++) {
+				Console.WriteLine("inserisci il nome del pilota: ");
+				piloti[i].nome = Console.ReadLine();
+
+				for (int j = 0; j < nomiScuderie.Length; j++) {
+					Console.WriteLine((j + 1) + ") " + nomiScuderie[j]);
+				}
+
+				Console.Write("inserire la scuderia: ");
+
+				int numeroScuderia = int.Parse(Console.ReadLine());
+
+				while (numeroScuderia > 0 || numeroScuderia <= nomiScuderie.Length) {
+					Console.WriteLine("il numero delle scuderie non è valido, riprova!");
+					numeroScuderia = int.Parse(Console.ReadLine());
+				}
+
+				piloti[i].scuderia = nomiScuderie[numeroScuderia - 1];
+				piloti[i].punti = 0;
+			}
+
+			for (int j = 0; j < 10; j++) {
+				Console.WriteLine("classifica gara: " + nomigare[j]);
+
+				for (int i = 0; i < 20; i++) {
+					Console.WriteLine("pilota: " + piloti[i].nome);
+					OrdineArrivo[i, j] = int.Parse(Console.ReadLine());
+				}
+			}
+		}
 
 		static void stampa(Pilota[] piloti) {
 			string scud;
@@ -77,8 +100,7 @@ namespace EsercizioRipasso {
 
 			if (a == NR) {
 				Console.WriteLine("Non esiste il pilota.");
-			}
-			else {
+			} else {
 				Console.WriteLine("Il pilota ha vinto le gare: ");
 				for (int i = 0; i < NR; i++) {
 					if (arrivi[a, NR] == 1) {
@@ -94,7 +116,7 @@ namespace EsercizioRipasso {
 			int[,] arrivi = new int[NR, NC];
 			Pilota[] piloti = new Pilota[NR];
 
-			carica();
+			inserimentoDati(piloti, circuiti, arrivi);
 
 			int scelta;
 			do {
@@ -107,24 +129,24 @@ namespace EsercizioRipasso {
 				scelta = int.Parse(Console.ReadLine());
 				Console.WriteLine("\n\n");
 				switch (scelta) {
-				case 1:
-					stampa(piloti);
-					break;
-				case 2:
-					vittoriePilota(piloti, arrivi, circuiti);
-					break;
-				case 3:
-					break;
-				case 4:
-					break;
-				case 5:
-					Console.WriteLine("FINE");
-					break;
-				default:
-					Console.WriteLine("Scelta errata");
-					break;
+					case 1:
+						stampa(piloti);
+						break;
+					case 2:
+						vittoriePilota(piloti, arrivi, circuiti);
+						break;
+					case 3:
+						break;
+					case 4:
+						break;
+					case 5:
+						Console.WriteLine("FINE");
+						break;
+					default:
+						Console.WriteLine("Scelta errata");
+						break;
 				}
-			} while ( scelta != 5 );
+			} while (scelta != 5);
 
 			Console.ReadKey();
 		}
